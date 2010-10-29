@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="jquery.isNull.js"></script>
+		<script src="jquery.isTypeOfString.js"></script>
+		<script src="jquery.isNumeric.js"></script>
+		<script src="jquery.isString.js"></script>
+		
+		
+	</head>
+	<body>
+		<Script>
+			
+			/*
+			 * IS String Samples
+			 * 
+			 * 
+			 */
+			
+			var bool1 = $.isString("test");
+			console.log( "Bool 1 => " +  bool1 );	
+			
+			
+			var bool2 = $.isString("test1234");
+			console.log( "Bool 2 => " +  bool2 );						
+
+			var bool3 = $.isString("string123",{ includeNumber: false,includeNull: false  });
+			console.log( "Bool 3 => " +  bool3 );	
+			
+			var bool4 = $.isString( null );
+			console.log( "Bool 4 => " +  bool4 );	
+			
+			
+			var bool5 = $.isString( null,{ includeNull: true } );
+			console.log( "Bool 5 => " +  bool5 );	
+			
+			
+			var bool6 = $.isString( 'mystring',{
+				callback: function(){
+					console.log("Bool 6 callback function", arguments);
+				}
+			});
+			console.log( "Bool 6 => " +  bool6 );				
+			
+			/*
+			 * IS Numeric
+			 * 
+			 */
+			
+			var num1 = $.isNumeric(123);
+			console.log( "num 1 => " +  num1 );				
+
+			var num2 = $.isNumeric(null);
+			console.log( "num 2 => " +  num2 );	
+			
+			
+			var num3 = $.isNumeric(null,{includeNull: true});
+			console.log( "num 3 => " +  num3 );	
+			
+			var num4 = $.isNumeric("123s");
+			console.log( "num 4 => " +  num4 );		
+
+</script>
+		
+		
+	</body>
+</html>

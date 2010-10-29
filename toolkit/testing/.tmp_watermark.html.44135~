@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
+	<script type="text/javascript" src="../production/jquery.watermark.js"></script>
+	
+	<script>
+	
+	$(document).ready(function(){
+
+		module("Focus Test");
+	    
+		test("Empty while focused", function() {
+			var focusValue;
+			$('.water').watermark(); 
+			
+			focusValue = $('.water').val();
+			equals( "testing", focusValue, "Expectiong default value 'testing'");
+
+			$('.water').focus();
+			focusValue = $('.water').val();
+			equals( "", focusValue, "Expectiong empty string");
+
+			$('.water').blur();
+			focusValue = $('.water').val();
+			equals( "testing", focusValue, "Expectiong default value after blur back to 'testing'");
+
+			$('.water').val('New Value');
+
+			focusValue = $('.water').val();
+			equals( "New Value", focusValue, "Changed value to 'New Value'");
+
+			$('.water').focus();
+			focusValue = $('.water').val();
+			equals( "New Value", focusValue, "Expectiong to maintain the variable 'New Value' with 'focus' on");
+			
+		});
+		
+	
+	});
+	
+	</script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture"> 
+ <input class="water" type="text" value="testing" />
+ <input class="water1" type="text" value="testing1" />
+ </div>
+
+</body>
+</html>

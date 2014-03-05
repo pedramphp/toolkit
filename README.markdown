@@ -25,12 +25,6 @@ Production
 * Nothing yet.
 
 
-Website
--------
-
-* I guess that your dudes back in iran were taking care of this?  correct?
-
-
 
 C
 D
